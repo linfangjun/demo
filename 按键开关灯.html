@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+        }
+        #a{
+            height: 400px;
+            width: 400px;
+            border-radius: 200px;
+            background-color: yellow;
+        }
+        #b{
+            font-size: 40px;
+            color: black;
+            text-align: center;
+            line-height: 400px;
+        }
+        #c{
+            width: 400px;
+            height: 100px;
+            background-color: black;
+        }
+        #btn{
+            width: 300px;
+            height: 60px;
+            margin-top: 20px;
+            margin-left: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div id ="a"><p id ="b">我是一盏灯</p></div>
+    <div id="c"><input type="button" value="开关灯切换" id="btn" style="height: 30px; width: 90px;"></div>
+    <script>
+        var light=document.getElementById('a');
+        var fon=document.getElementById('b');
+        var btn=document.getElementById('btn');
+        var a=true;
+        btn.onclick=function(){
+            if(a){
+                light.style.backgroundColor='black';
+            }
+            else{
+                light.style.backgroundColor='yellow';
+            }
+            a=!a;
+        }
+        
+    </script>    
+</body>
+</html>
