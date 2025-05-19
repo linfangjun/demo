@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="echarts.min.js"></script>
+</head>
+<body>
+    <div id="box" style="width: 600px;height: 400px;"></div>
+    <script>
+        const mEcharts=echarts.init(document.querySelector('#box'));
+        var option={
+            title:{
+                text:'小明在不同平台上的消费',
+            },
+            legend:{
+                top:'bottom',
+            },
+            series:[{
+                name:'不同平台的消费',
+                type:'pie',
+                data:[{name:'淘宝',value:11231},
+                {name:'京东',value:22673},
+                {name:'唯品会',value:6123},
+                {name:'1号店',value:8985},
+                {name:'聚美优品',value:6700}],
+                //数值的显示
+                label:{
+                    //show:true;
+                    formatter:function(arg){
+                        // console.log(arg);
+                        return arg.name+'平台上消费了'+arg.value+'元\n'+arg.percent;
+                    }
+                },
+                //半径
+                // radius:'20%'
+                //圆环
+                // radius:['50%','70%'],
+                //南丁格尔图
+                roseType:'radius',
+                //选中效果
+                //一个偏离原位
+                // selectedMode:'single',
+                //多个偏离
+                selectedMode:'multiple',
+                //偏离大小
+                selectedOffset:40,
+            }]
+        }
+        mEcharts.setOption(option);
+    </script>
+</body>
+</html>
